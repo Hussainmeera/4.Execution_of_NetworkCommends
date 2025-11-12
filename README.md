@@ -28,8 +28,7 @@ This commands includes
  PROGRAM:
  
 CLIENT
-
-~~~
+```
 import socket
 from pythonping import ping
 s=socket.socket()
@@ -42,9 +41,9 @@ while True:
         c.send(str(ping(hostname, verbose=False)).encode())
     except Exception as e:  # Catch all errors
         c.send(f"Error: {str(e)}".encode())
-~~~
+```
 SERVER
-~~~
+```
 import socket
 s=socket.socket()
 s.connect(('localhost',8000))
@@ -52,7 +51,7 @@ while True:
     ip=input("Enter the website you want to ping ")
     s.send(ip.encode())
     print(s.recv(1024).decode())
-~~~
+```
 ## Output
 <img width="937" height="524" alt="image" src="https://github.com/user-attachments/assets/4e957867-c8b0-41a8-9ce8-b0a74b054ff9" />
 
